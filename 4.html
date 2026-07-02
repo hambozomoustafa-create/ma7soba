@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا - تواصل معنا فوراً</title>
+    <!-- مكتبة الأيقونات الشهيرة FontAwesome عشان تظهر علامات الواتس والفون والانستا -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .main-logo{
+               height: 150px;
+               width:150px;
+               border-radius: 8px;
+               object-fit: cover;
+               mix-blend-mode: multiply;
+    position: absolute !important;
+   top: 7px;
+   right: 20px !important;
+           }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+           
+            height: 1000px;
+              background-image: linear-gradient(to bottom, #3eb93e, transparent);   
+            color: #1e293b;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+        }
+        .contact-card {
+            max-width: 500px;
+            width: 100%;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        h1 {
+            color: #0f172a;
+            margin-bottom: 10px;
+            font-size: 1.8em;
+        }
+        .subtitle {
+            color: #64748b;
+            font-size: 1em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 15px;
+            font-size: 1.1em;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        /* ألوان الأزرار الرسمية للتطبيقات */
+        .btn-whatsapp {
+            background-color: #25d366;
+        }
+        .btn-phone {
+            background-color: #3b82f6;
+        }
+        .btn-instagram {
+            background-image: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+        .btn i {
+            font-size: 1.3em;
+        }
+        .footer-text {
+            margin-top: 30px;
+            font-size: 0.85em;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contact-card">
+    <h1>تواصل معنا</h1>
+    <p class="subtitle">يسعدنا تواصلك معنا في أي وقت! اضغط على أي وسيلة تواصل بالأسفل وسيتم تحويلك فوراً.</p>
+
+    <div class="contact-buttons">
+        <!-- زرار الواتساب الذكي -->
+        <a href="https://wa.me/201288416816" target="_blank" class="btn btn-whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            <span>تواصل معنا عبر واتساب</span>
+        </a>
+
+        <!-- زرار الاتصال الهاتفي الفوري -->
+        <a href="tel:01288416816" class="btn btn-phone">
+            <i class="fas fa-phone-alt"></i>
+            <span>اتصل بنا هاتفياً</span>
+        </a>
+
+        <!-- زرار الانستجرام -->
+        <a href="https://www.instagram.com/hambozo-moustafa" target="_blank" class="btn btn-instagram">
+            <i class="fab fa-instagram"></i>
+            <span>تابعنا على انستجرام</span>
+        </a>
+    </div>
+
+    <p class="footer-text">جاهزون للرد على استفساراتكم طوال اليوم</p>
+</div>
+<a href="ma7soba.html"><img src="222.jpg" alt="main-logo" class="main-logo" id="main-logo"></a>
+
+</body>
+</html>

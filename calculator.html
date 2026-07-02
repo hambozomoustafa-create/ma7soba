@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خدماتنا التجارية - حاسبات الأرباح والتجارة</title>
+    <style>
+        .main-logo{
+               height: 150px;
+               width:150px;
+               border-radius: 8px;
+               object-fit: cover;
+               mix-blend-mode: multiply;
+    position: absolute !important;
+   top: 7px;
+   right: 20px !important;
+           }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: linear-gradient(to bottom, #3eb93e, transparent);  
+            color: #1e293b;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #bde6b1;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        h1 {
+            text-align: center;
+            color: #0f172a;
+            border-bottom: 3px solid #10b981;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        .intro {
+            font-size: 1.1em;
+            line-height: 1.6;
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 35px;
+        }
+        .calculator-card {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .calculator-card h2 {
+            color: #0f172a;
+            margin-top: 0;
+            font-size: 1.3em;
+            border-right: 4px solid #10b981;
+            padding-right: 10px;
+        }
+        .formula-box {
+            background: #e2e8f0;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-size: 0.9em;
+            color: #334155;
+            margin: 12px 0;
+            font-weight: 500;
+        }
+        .math {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            color: #047857;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            color: #334155;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1em;
+            box-sizing: border-box;
+        }
+        .btn-calc {
+            background-color: #10b981;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.2s;
+        }
+        .btn-calc:hover {
+            background-color: #059669;
+        }
+        .result-box {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #ecfdf5;
+            border: 1px solid #a7f3d0;
+            border-radius: 8px;
+            color: #065f46;
+            font-weight: bold;
+            display: none;
+            text-align: center;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>أدوات وحاسبات السوق والتجارة</h1>
+    <p class="intro">مرحباً بك في صفحة أدواتنا التجارية. نوفر لك هنا أدوات حاسبة دقيقة لإدارة حسابات محلك، حساب هوامش الأرباح، نسب الخصومات، ومصاريف الشحن بشكل فوري.</p>
+
+    <!-- 1. حاسبة هامش الربح -->
+    <div class="calculator-card">
+        <h2>1. حاسبة هامش الربح وصافي المكسب</h2>
+        <p>احسب صافي أرباحك من بيع أي منتج ونسبة ربحك المئوية بناءً على التكلفة.</p>
+        <div class="formula-box">
+            <strong>القانون التجاري:</strong> <br>
+            صافي الربح = سعر البيع - سعر التكلفة <br>
+            نسبة الهامش = (صافي الربح ÷ سعر البيع) × 100%
+        </div>
+        <div class="input-group">
+            <label>سعر تكلفة المنتج (جملة أو تصنيع):</label>
+            <input type="number" id="cost-price" placeholder="مثال: 150">
+        </div>
+        <div class="input-group">
+            <label>سعر بيع المنتج للمستهلك:</label>
+            <input type="number" id="selling-price" placeholder="مثال: 200">
+        </div>
+        <button class="btn-calc" onclick="calcProfit()">احسب المكسب والأرباح</button>
+        <div class="result-box" id="profit-result"></div>
+    </div>
+
+    <!-- 2. حاسبة مصاريف الشحن وإجمالي الأوردر -->
+    <div class="calculator-card">
+        <h2>2. حاسبة الشحن وإجمالي الفاتورة</h2>
+        <p>حساب التكلفة النهائية التي سيدفعها الزبون شاملة مصاريف الشحن والتوصيل.</p>
+        <div class="formula-box">
+            <strong>القانون التجاري:</strong> إجمالي الفاتورة = سعر المنتجات الكلي + مصاريف الشحن
+        </div>
+        <div class="input-group">
+            <label>إجمالي سعر المنتجات في الأوردر:</label>
+            <input type="number" id="order-subtotal" placeholder="مثال: 350">
+        </div>
+        <div class="input-group">
+            <label>مصاريف الشحن والتوصيل:</label>
+            <input type="number" id="shipping-cost" placeholder="مثال: 50">
+        </div>
+        <button class="btn-calc" onclick="calcTotalOrder()">احسب إجمالي المطلوب من الزبون</button>
+        <div class="result-box" id="shipping-result"></div>
+    </div>
+
+    <!-- 3. حاسبة الخصومات والنسبة المئوية -->
+    <div class="calculator-card">
+        <h2>3. حاسبة العروض والخصومات المئوية</h2>
+        <p>احسب السعر الجديد للمنتج بعد عمل خصم بنسبة مئوية (Sale) ومعرفة المبلغ اللي هيتوفر.</p>
+        <div class="formula-box">
+            <strong>القانون التجاري:</strong> <br>
+            قيمة الخصم = السعر الأصلي × (نسبة الخصم ÷ 100) <br>
+            السعر بعد الخصم = السعر الأصلي - قيمة الخصم
+        </div>
+        <div class="input-group">
+            <label>سعر المنتج قبل الخصم:</label>
+            <input type="number" id="base-price" placeholder="مثال: 500">
+        </div>
+        <div class="input-group">
+            <label>نسبة الخصم المطلوبة (%):</label>
+            <input type="number" id="discount-percent" placeholder="مثال: 15">
+        </div>
+        <button class="btn-calc" onclick="calcDiscount()">احسب السعر بعد الخصم</button>
+        <div class="result-box" id="discount-result"></div>
+    </div>
+
+    <!-- 4. حاسبة تقسيط المنتجات -->
+    <div class="calculator-card">
+        <h2>4. حاسبة خطط تقسيط المبيعات</h2>
+        <p>احسب قيمة القسط الفردي للزبون لو هيشتري منتج بالتقسيط على عدد شهور معينة.</p>
+        <div class="formula-box">
+            <strong>القانون التجاري:</strong> القسط الشهري = (سعر المنتج الكلي + قيمة فائدة التقسيط إن وجدت) ÷ عدد الشهور
+        </div>
+        <div class="input-group">
+            <label>سعر المنتج الكلي الكاش:</label>
+            <input type="number" id="product-cash-price" placeholder="مثال: 1200">
+        </div>
+        <div class="input-group">
+            <label>إجمالي نسبة فائدة التقسيط إن وجدت (% اكتب 0 لو بدون فوائد):</label>
+            <input type="number" id="interest-percent" value="0" placeholder="مثال: 10">
+        </div>
+        <div class="input-group">
+            <label>عدد شهور التقسيط:</label>
+            <input type="number" id="months" placeholder="مثال: 6">
+        </div>
+        <button class="btn-calc" onclick="calcInstallment()">احسب القسط الشهري</button>
+        <div class="result-box" id="installment-result"></div>
+    </div>
+</div>
+
+<script>
+function calcProfit() {
+    var cost = parseFloat(document.getElementById('cost-price').value);
+    var sell = parseFloat(document.getElementById('selling-price').value);
+    var res = document.getElementById('profit-result');
+    
+    if (cost >= 0 && sell > 0) {
+        var netProfit = sell - cost;
+        var marginPercent = (netProfit / sell) * 100;
+        
+        res.style.display = "block";
+        res.innerHTML = "💰 صافي ربحك في القطعة: " + netProfit.toFixed(2) + " جنيه<br>" +
+                        "📈 نسبة هامش الربح من البيع: " + marginPercent.toFixed(1) + "%";
+    } else {
+        alert("يرجى إدخال أرقام صحيحة للتكلفة وسعر البيع");
+    }
+}
+
+function calcTotalOrder() {
+    var subtotal = parseFloat(document.getElementById('order-subtotal').value);
+    var shipping = parseFloat(document.getElementById('shipping-cost').value);
+    var res = document.getElementById('shipping-result');
+    
+    if (subtotal > 0 && shipping >= 0) {
+        var total = subtotal + shipping;
+        res.style.display = "block";
+        res.innerHTML = "🛍️ إجمالي المبلغ المطلوب من الزبون: " + total.toFixed(2) + " جنيه (شامل الشحن)";
+    } else {
+        alert("يرجى إدخال أسعار صحيحة للأوردر والشحن");
+    }
+}
+
+function calcDiscount() {
+    var price = parseFloat(document.getElementById('base-price').value);
+    var discount = parseFloat(document.getElementById('discount-percent').value);
+    var res = document.getElementById('discount-result');
+    
+    if (price > 0 && discount >= 0 && discount <= 100) {
+        var savedAmount = price * (discount / 100);
+        var finalPrice = price - savedAmount;
+        
+        res.style.display = "block";
+        res.innerHTML = "🏷️ السعر بعد الخصم: " + finalPrice.toFixed(2) + " جنيه<br>" +
+                        "💵 الزبون هيوفر: " + savedAmount.toFixed(2) + " جنيه";
+    } else {
+        alert("يرجى إدخال سعر صحيح ونسبة خصم بين 0 و 100");
+    }
+}
+
+function calcInstallment() {
+    var price = parseFloat(document.getElementById('product-cash-price').value);
+    var interest = parseFloat(document.getElementById('interest-percent').value);
+    var duration = parseInt(document.getElementById('months').value);
+    var res = document.getElementById('installment-result');
+    
+    if (price > 0 && interest >= 0 && duration > 0) {
+        var totalWithInterest = price + (price * (interest / 100));
+        var monthlyInstallment = totalWithInterest / duration;
+        
+        res.style.display = "block";
+        res.innerHTML = "📅 قيمة القسط الشهري: " + monthlyInstallment.toFixed(2) + " جنيه شهرياً<br>" +
+                        "💳 إجمالي السعر بالتقسيط: " + totalWithInterest.toFixed(2) + " جنيه";
+    } else {
+        alert("يرجى إدخال بيانات صحيحة للتقسيط");
+    }
+}
+</script>
+<a href="ma7soba.html"><img src="222.jpg" alt="main-logo" class="main-logo" id="main-logo"></a>
+
+</body>
+</html>
